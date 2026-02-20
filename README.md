@@ -72,6 +72,70 @@ User authentication mechanisms are essential to ensure secure and authorized acc
 Client-server chat applications are versatile tools that facilitate real-time communication between users over a network. They incorporate various components, including server-side and client-side elements, and must consider factors such as security, scalability, and concurrency. As technology continues to advance, client-server chat applications remain integral for collaborative communication in various domains.
 
 Client-server chat applications are foundational to real-time communication over networks. They incorporate principles of socket programming, communication protocols, and security mechanisms to provide a seamless user experience. Understanding the basics of client-server chat applications is essential for developers involved in networked application development, as they form the backbone of various collaborative communication systems. As technology evolves, chat applications continue to adapt, incorporating new features and technologies to enhance user interaction and connectivity.
+## Program:
+Client:
+```
+import socket
+
+s = socket.socket()
+
+host = input("Enter hostname or host IP : ")
+port = 8080
+
+s.connect((host, port))
+print("Connected to chat server")
+
+while True:
+    incoming_message = s.recv(1024)
+    incoming_message = incoming_message.decode()
+    print("Server :", incoming_message)
+
+    message = input(">> ")
+    s.send(message.encode())
+    print("Sent")
+```
+Server:
+```
+import socket
+
+s = socket.socket()
+
+host = socket.gethostname()
+print("Server will start on host :", host)
+
+port = 8080
+s.bind((host, port))
+
+print()
+print("Waiting for connection...")
+print()
+
+s.listen(1)
+conn, addr = s.accept()
+
+print(addr, "has connected to the server")
+print()
+
+while True:
+    message = input(">> ")
+    message = message.encode()
+    conn.send(message)
+    print("Sent")
+    print()
+
+    incoming_message = conn.recv(1024)
+    incoming_message = incoming_message.decode()
+    print("Client :", incoming_message)
+    print()
+```
+
+## Output:
+
+#### Client:
+<img width="643" height="174" alt="image" src="https://github.com/user-attachments/assets/66a79932-4cb4-4e5c-9d0a-075bbec51ed3" />
+
+#### Server:
+<img width="681" height="209" alt="image" src="https://github.com/user-attachments/assets/08dea16c-e663-458a-b6d5-d995fcb2d9bc" />
 
 
 ## Result:
