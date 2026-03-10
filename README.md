@@ -131,11 +131,10 @@ while True:
 
 ## Output:
 
-#### Client:
-<img width="643" height="174" alt="image" src="https://github.com/user-attachments/assets/66a79932-4cb4-4e5c-9d0a-075bbec51ed3" />
-
 #### Server:
-<img width="681" height="209" alt="image" src="https://github.com/user-attachments/assets/08dea16c-e663-458a-b6d5-d995fcb2d9bc" />
+<img width="1126" height="828" alt="image" src="https://github.com/user-attachments/assets/e85b7a5c-3561-4f1d-901e-bf625c5d0a90" />
+#### client:
+<img width="1261" height="879" alt="image" src="https://github.com/user-attachments/assets/072e67d6-1e36-459f-a441-e37e7e9577d6" />
 
 
 ## Result:
